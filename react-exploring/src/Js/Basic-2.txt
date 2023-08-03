@@ -1,0 +1,114 @@
+This keyword - 
+    This is a object that a function is a property of. ( who called me )
+    gives method acces to their properties
+    const obj1 = {
+    name:'Shrikant',
+    sayName : function() {
+        console.log('My name ' + this.name);
+    }
+    }
+    obj1.sayName()
+
+    ************************************
+    var name = 'shri';
+    function sayName() {
+    console.log(this.name);
+    }
+
+    const obj = {
+    name:'obj',
+    sayName:sayName, 
+    }
+
+    const obj1 = {
+    name:'obj1',
+    sayName:sayName, 
+    }
+    sayName()
+
+    Call, apply & bind -
+    call() - under the hood by default we use call
+    call & apply use to call method with different object where bind is used to return the method with different this keyword and used later.
+    call & apply different in parameters only. bind takes same arguments as call
+
+    var obj = {
+    name:'obj',
+    health:100,
+    cureHealth(num=0) {
+        this.health += num;
+    }
+    }
+    obj.cureHealth.call()
+
+    var obj1 = {
+    name:'obj1',
+    health:30,
+    }
+    obj.cureHealth.call(obj1,10)
+    obj.cureHealth.apply(obj1,[10])
+    var cure = obj.cureHealth.bind(obj1,10);
+    cure();
+    console.log(obj1)
+
+*******************************************
+Arrow fucntions - 
+    shorter way of writing the function
+    const sum = (a,b) => a+b;
+
+    const sum = (a,b) =>{
+        return a+b;
+    }
+Everything is lexically scoped except this 
+Arrow functions are lexically bound
+
+var obj = {
+  sing() {
+    console.log(this);
+    function singagain() {
+      console.log(this) // referes to window as this by default falls to window object
+    }
+    singagain()
+  }
+}
+obj.sing()
+
+------------------------------------------------
+var obj = {
+  sing() {
+    console.log(this);
+     const singagain = () => {
+      console.log(this) // referes to obj as this in Arrow is lexically bound to where it is called
+    }
+    singagain()
+  }
+}
+obj.sing()
+
+***************************************************
+Asynchronous JS - ( event loop queue )
+
+const myTimeout = setTimeout(() => {
+    alert('hi)
+}, 5000);
+function will exexcuted after mentioned time
+clearTimeout(myTimeout); - to clear the myTimeout
+
+setInterval - to run the function after certain interval
+clearInterval - to clear the interval
+
+Promise - 
+promise can be fulfilled, pending and rejected.
+var mypromise = new Promise((resolve,reject) => {
+  setTimeout(() => {
+  resolve('yes');
+},2000)
+})
+mypromise.then((res) => console.log(res)) / It waits till the given time out and then print res
+
+Asych/Await - 
+async makes a function return a Promise. ( just add asych keyword before function)
+await makes a function wait for a Promise.
+
+The await keyword can only be used inside an async function.
+The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
+

@@ -1,0 +1,126 @@
+Javascript is single thraded, synchronous (one by one execution) laguage.
+Loosely typed language, So no need to define the variable type.
+
+Data Types - typeOf ( to check the type )
+    Primitve - Number, Booleanl String, undefined, null ( shows as object but thats not correct )
+    (All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever)
+
+Javascript Engine - 
+    V8 engine - ( written in c++ by google )
+        It contains conversion of Js code to machine understable code.
+    
+Intepreters - intepretes the code ( go line by line but take time for repetative code) ( byte code)
+compiler - (setup take time but do some optimization) ( machine level code )
+( both converts the code)
+
+v8 engine uses both Intepreters and compiler ( JIT - just in time compiler )
+
+Js engine -
+  call stack - engine keep track of where the code is
+  memeory heap - store the variable ( memory allocation )
+
+  When we call any function() -> execution context is created by JS in call stack
+  initially global() execution context is created by Js. ( one above other and pop out in call stack )
+  when global execution context is created then we get global object(window) and this keyword. then our code is run.
+
+Lexical envirornment - ( where we write something ) when running code under it's execution context we are Lexical envirornment inside that function.
+very first lexical envirornment is global lexical envirornment.
+Lexical scope - available data + variables where the function is defined.
+
+Hoisting -
+    While creating execution context hoising is there. Is a behaviour of moving varibles and function declaration at top of their respective env during compilation phase.
+    variable are partially hoisted and functions are hoisted.
+    Every functin has it's own exetion context and hoisting.
+    when saw var and function in execution context, understands that need memory and the hoisted.
+    const, let and function expression are not hoisted
+
+    var a = 'hi'
+    function sayBye() {
+    console.log(a); // undefined
+    var a = 'bye';
+    console.log(a) // bye as per the execution context and hoisting of function
+    }
+    sayBye()
+
+    arguments keyword will get all the argumets for a function
+    spread operator same as arguments to take the remaning array
+
+    variable envirornment -  for each function context variable has its own envirornment ( world )
+
+    Scope Chain - Each varibles envirornment has a link (scope chain) to it's parent variable envirornment (world)
+    functional(var) and block scope( let & const)
+
+    IIFE - ( immedietly invoked function ) to overcome var global access problem
+    (function hi() {
+        console.log('hi');
+    })()
+
+    Closures - function and lexical scope
+        allow function to access variables from an enclosing scope or env even after it leaves the scope in which it was declared
+        function has a access to all of it's outer variable functions via scope chain.
+        function a() {
+        let d = 10;
+        return function() {
+            console.log(d)
+        }
+        }
+        var c = a()
+        c()
+
+Spread - To spread the elements
+let a = [10,20];
+    let b = [...a,30]
+    console.log(b)
+
+    var obj = {
+    name:'shri'
+    }
+    console.log({...obj,age:20})
+
+  Rest parameters - to take the rest of the arguments/parameters ( in older way we were using arguments)
+  function sum(a,...rest) {
+    console.log(a,rest)
+  }
+  sum(10,20,30)
+
+Array functions - 
+( below modified the original array )
+push - to push element at the end
+pop - to pop out the last element from array
+shift - to remove first element
+unshift - to add element at first place
+splice(startindex, elementcount) - cut the array
+sort - sorts the array
+reverse - reverse the array
+
+( below does not modify the array )
+slice(startIndex, endIndex) - returns the new array with given index  
+toString() - converts the array into string
+includes() - arr.includes(element) - return true if element present
+indexOf() - arr.indexOf(element) returns index of the array element, return -1 if not present
+lastIndexOf() - last index of element
+length - tell length of array element
+
+Iterator -
+map - to manipulate array elements, returns new array
+var a = [10,20,5,30,40];
+let b = a.map(el => el*2)
+console.log(b)
+
+foreach - to iterate the array The 
+forEach() method calls a function for each element in an array.
+
+Filter - to filter our array element with some condition, returns new array
+var a = [10,20,30,42]
+console.log(a.filter((el) => el > 20))
+
+find - console.log(a.find((el) => el > 20)) - finds the first matching element with condition
+The findIndex() method returns the index (position) of the first element that passes a test.
+
+join - The join() method returns an array as a string. - does not change original array
+'a,b,c'.split(',') - ['a','b','c']
+['a','b','c'].join(',') - 'a,b,c'
+
+reduce - The reduce() method returns a single value: the function's accumulated result.
+var a = [10,20,30,42]
+console.log(a.reduce((total,el) => total + el))

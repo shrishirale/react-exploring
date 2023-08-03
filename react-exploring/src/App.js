@@ -1,10 +1,13 @@
 import "./App.css";
-import HttpData from "./components/http-data/HttpData";
+import ContextEx from "./components/ContextEx/ContextEx";
+import Context from "./components/ContextEx/Context";
 
 function App() {
   return (
     <div>
-      <HttpData />
+      <Context.Provider value="Shrikant">
+        <ContextEx />
+      </Context.Provider>
     </div>
   );
 }
