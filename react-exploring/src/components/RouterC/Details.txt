@@ -1,0 +1,14 @@
+install react router dom ( library used for routes )
+wrap our app in BrowserRouter
+
+create components
+Wrap Routes and route
+each route will have path and component 
+Link to link to a route with click
+Navlink will set active class to clicked nav link
+
+To programatically navigate use - useNavigate
+Route path=* and specify your component for no match route
+
+const LazyAbout = lazy(() => import("./About"));
+to lazy load the module when clicked to that route
