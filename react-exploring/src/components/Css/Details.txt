@@ -1,0 +1,63 @@
+Flexbox is good for one direction code ( one dimentional)
+helps to arrange the elements easily ( flexible)
+control spacing alignment and order of elements.
+
+Terminology - 
+    Flex container - parent 
+    Flex items - childrens
+
+    Axis - main axis - left to right
+           cross axis - top to bottom
+
+
+         -------------------  <-- cross start
+        |                   |
+        |   item 1, 2, 3    |    Cross Size
+        |                   |
+        |-------------------| <--- cross end
+ (main start) main size (main end)
+
+ Proprties associated with Flex container - 
+    display - flex ( take all the width -block ) /inline-flex( take the size equal to elements - inline)
+    flex-direction - ( sets the dorection of main axis)
+        main access by default left to right. ( row, row-reverse ) column - item flows from top to bottom, column-reverse
+    flex-wrap - controles wrapping of flex items within the container
+       no-wrap - default ( when shrinked item shrink to some extends and then horizontal row), wrap - to wrap within the container ( when shrinked move to next row)
+       wrap-reverse - when shrinked last item goes above
+    flex-flow - shorthand for flex direction and flex wrap
+       flex-flow - row no-wrap ( default )
+    column-gap - sets the gap between columns
+       column-gap:20px
+    row-gap - sets the gap between row
+    gap - shorthand for row-gap and column gap
+       gap:10px 20px
+    justify-content - aligns items in main-acess and disrtibute extra spaces in between
+       flex-start ( default ), flex-end ( main end), centre,
+       space-between ( space is evenly distributed in items)
+       space-around ( space is added in start and end along with in between)
+       space-evenly ( )
+    align-items - align item accross the cross axis
+        stretch ( to fill the container)
+       flex-start - push the item to start of container
+       flex-end - push the item to bottom of container
+       centre - and baseline - text baseline
+    align-content - align rows of content move across cross axis
+       flex-start - 
+       space-between - 
+       space-around - 
+       
+
+Flex item properties - 
+       order - 1 will shift to end ( 0 by default of all)
+       flex-grow - what amount of space it should take inside the item
+              0 - default( no grow ), 1 - will take up all the remaining space 
+       flex-shrink - ability to shrink item if necessary, relative to other items in the container
+              1 - defualt value, 0 - no shrink
+              2,3 -  they will shrink more than other items
+       flex-basis - initial size of flex item ( width property)
+              auto - default 200px 
+              flex grow and flex shrink apply on top of flex basis
+       flex - shorthand for above <grow><shrink><basis>
+       align self - alignment of individual items acors cross axis
+              flex-start, flex-end, centre
+      

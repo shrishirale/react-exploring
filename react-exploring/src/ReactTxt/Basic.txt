@@ -1,3 +1,4 @@
+A JavaScript library for building user interfaces
 The Virtual DOM (VDOM) is an in-memory representation of Real DOM. 
 The representation of a UI is kept in memory and synced with the "real" DOM. It's a step that happens between the render function being called and the displaying of elements on the screen.
 This entire process is called reconciliation.
@@ -23,6 +24,4 @@ Updating: In this phase, the component gets updated in two ways, sending the new
 Unmounting: In this last phase, the component is not needed and gets unmounted from the browser DOM. This phase includes componentWillUnmount() lifecycle method.)
 
 A higher-order component (HOC) is a function that takes a component and returns a new component. Basically, it's a pattern that is derived from React's compositional nature.
-
-Redux is a predictable state container for JavaScript apps based on the Flux design pattern. Redux can be used together with React, or with any other view library. It is tiny (about 2kB) and has no dependencies.
 
