@@ -2,9 +2,11 @@ Javascript is single thraded, synchronous (one by one execution) laguage.
 Loosely typed language, So no need to define the variable type.
 
 Data Types - typeOf ( to check the type )
-    Primitve - Number, Booleanl String, undefined, null ( shows as object but thats not correct )
+    Primitve - Number, Boolean, String, undefined, null ( shows as object but thats not correct )
     (All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever)
-
+    And one non-primitive data type:
+    object for more complex data structures.
+    
 Javascript Engine - 
     V8 engine - ( written in c++ by google )
         It contains conversion of Js code to machine understable code.

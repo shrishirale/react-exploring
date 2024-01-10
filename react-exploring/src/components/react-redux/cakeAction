@@ -1,0 +1,5 @@
+const buy = {
+  type: "BUY_CAKE",
+};
+
+export default buy;

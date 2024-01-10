@@ -1,0 +1,11 @@
+Every time state changes, component re-renders and so do childrens
+Memo will prevent run when prop or state value is not changed of the children
+but when passed the function from parent component every time react send the new function so memo will rerender the component
+
+Usecallback - is hook that will return a memoized version of callback function that only changes if one of the dependencies is changed
+( useful when passing callbacks to child component that relies on reference equality)
+
+We need to use memo with Usecallback
+
+UseMemo hook - ( cache a result and Usecallback cache a function)
+usememo returns a cashed value if it's dependency is not changed

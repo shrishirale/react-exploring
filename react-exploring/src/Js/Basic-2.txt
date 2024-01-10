@@ -29,7 +29,7 @@ This keyword -
     Call, apply & bind -
     call() - under the hood by default we use call
     call & apply use to call method with different object where bind is used to return the method with different this keyword and used later.
-    call & apply different in parameters only. bind takes same arguments as call
+    call & apply different in parameters only. bind takes same arguments as call. Use to borrow methods from other objdcts.
 
     var obj = {
     name:'obj',

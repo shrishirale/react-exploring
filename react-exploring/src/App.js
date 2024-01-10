@@ -1,14 +1,17 @@
 import "./App.css";
-import ContextEx from "./components/ContextEx/ContextEx";
-import Context from "./components/ContextEx/Context";
+import { Provider } from "react-redux";
+import CakeView from "./components/react-redux/CakeView";
+import store from "./components/react-redux/async-redux/User/userStore";
+import Mainview from "./components/react-redux/async-redux/Mainview";
 
 function App() {
   return (
-    <div>
-      <Context.Provider value="Shrikant">
-        <ContextEx />
-      </Context.Provider>
-    </div>
+    <Provider store={store}>
+      <div>
+        <h1> App !</h1>
+        <Mainview />
+      </div>
+    </Provider>
   );
 }
 
